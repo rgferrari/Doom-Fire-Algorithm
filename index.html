@@ -1,63 +1,26 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <style>
-        #fireCanvas{
-            margin: 10px;
-        }
-
-        table{
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        td{
-            width: 32px;
-            height: 32px;
-            border: 1px solid black;
-            text-align: center;
-            font-family: monospace;
-            font-size: 10px;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .pixel-index{
-            position: absolute;
-            font-size: 7px;
-            display: inline-block;
-            top: 1px;
-            right: 1px;
-            color: #999;
-        }
-
-        td.pixel{
-            width: 4px;
-            height: 4px;
-            border: 0;
-        }
-
-        body {
-            background-color: #63431c;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-      }
-
-        .center{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="center">
         <div id="fireCanvas"></div>
-        <button onclick="toggleDebugMode()">Toggle Debug Mode</button>
+        <div class="row">
+          <button onclick="setWind('decrease')"><<</button>
+          <button onclick="setWind('noWind')">No Wind</button>
+          <button onclick="setWind('increase')">>></button>
+        </div>
+        <div class="row">
+          <button onclick="setFireStartIntensity('min')">Min Fire</button>
+          <button onclick="setFireStartIntensity('decrease')">-</button>
+          <button onclick="setFireStartIntensity('increase')">+</button>
+          <button onclick="setFireStartIntensity('max')">Max Fire</button>
+        </div>
+        <div class="row">
+          <button onclick="toggleDebugMode()">Toggle Debug Mode</button>
+          <button onclick="start()">Reset Fire</button>
+        </div>
     </div>
     <script src="fire.js"></script>
 </body>
